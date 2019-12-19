@@ -23,6 +23,7 @@
 
     <script src="js/jquery.min.js?v=2.1.4"></script>
     <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="https://cdn.bootcss.com/jquery.blockUI/2.70.0-2014.11.23/jquery.blockUI.min.js"></script>
     <script src="https://cdn.bootcss.com/bootbox.js/4.4.0/bootbox.min.js"></script>
 
 </head>
@@ -67,7 +68,7 @@
 <!-- iCheck -->
 <script src="js/plugins/iCheck/icheck.min.js"></script>
 
-<script type="text/javascript">
+<script>
     function login(){
         var userName = document.getElementById("username").value;
         var password = document.getElementById("password").value;
@@ -85,8 +86,7 @@
                 userId = data.id;
                 name = data.name;
                 if (userId == -1){
-                    console.log("aaa");
-                    bootbox.alert("登陆失败");
+                    alert('登录失败，请检查用户名和密码后重新登录');
                     return;
                 }
                 else{
@@ -100,6 +100,13 @@
     function setCookie(userId, name){
         window.localStorage.setItem("userId", userId);
         window.localStorage.setItem("name", name);
+    }
+
+    document.onkeydown=function(event){
+        var code = event.keyCode;
+        if(code === 13){ // enter
+            login();
+        }
     }
 </script>
 

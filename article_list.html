@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>FreeAnno课外读物智能批注系统 - 所有文章</title>
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+	<div class = "wrapper wrapper-content animated fadeInRight" id="articleDiv">
+<!--
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content text-center p-md">
+						<h2>
+							<span class="text-navy">《春》</span>
+						</h2>
+						<p>
+							作者：朱自清
+						</p>
+						<div class="text-right">
+							<div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="detail()"><i class="fa fa-search"></i>&nbsp;查看详情</button></div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+-->
+	</div>
+
+	<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/plugins/layer/layer.min.js"></script>
+
+<!-- 自定义js -->
+<script type="text/javascript" src="js/contabs.js"></script>
+
+<!-- 第三方插件 -->
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<script type="text/javascript">
+	var allArticles;
+	$.ajax({
+		url:"http://localhost:8080/article/getAllArticles",
+		type:"GET",
+		async: false,
+		success: function(data){
+			allArticles = data;
+		}
+	})
+
+	var articleTemplate = '<div class="row"><div class="col-lg-12"><div class="ibox float-e-margins">'
+		+ '<div class="ibox-content text-center p-md"><h2><span class="text-navy">《${articleName}》</span>'
+		+ '</h2><p>作者：${author}</p>'
+		+ '<div class="text-right"><div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="detail(${articleId})">'
+		+ '<i class="fa fa-search"></i>&nbsp;查看详情</button></div></div></div></div></div></div>';
+
+	for (var i = 0; i < allArticles.length; i++){
+		document.getElementById("articleDiv").innerHTML += articleTemplate.replace('${articleName}', allArticles[i]['title']).replace('${author}', allArticles[i]['author']).replace('${articleId}', allArticles[i]['id']);
+	}
+
+	function detail(articleId){
+		window.location.href = "article_detail.html?articleId=" + articleId;
+	}
+</script>
+</body>
+</html>

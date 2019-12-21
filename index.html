@@ -12,7 +12,6 @@
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
 
-    <link rel="shortcut icon" href="favicon.ico">
     <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
@@ -37,18 +36,18 @@
                                                                   style="font-size:15px;">欢迎，</strong></span>
                                <span class="clear">
                                <span class="block m-t-xs"><strong class="font-bold"
-                                                                  style="font-size:15px;" id="name">aaa</strong></span>
+                                                                  style="font-size:15px;" id="name"></strong></span>
                                    </span>
                                 </span>
                         </a>
                     </div>
                 </li>
                 <li>
-                    <a class="J_menuItem" href="bestAnnotation.html"><i class="fa fa-trophy"></i>
+                    <a class="J_menuItem" href="best_annotation.html"><i class="fa fa-trophy"></i>
                         <span class="nav-label">最佳批注</span></a>
                 </li>
                 <li>
-                    <a class="J_menuItem" href="bestAnnotation.html"><i class="fa fa-file-text-o"></i>
+                    <a class="J_menuItem" href="article_list.html"><i class="fa fa-file-text-o"></i>
                         <span class="nav-label">文章列表</span></a>
                 </li>
                 <li>
@@ -59,13 +58,13 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="studentLesson.html" data-index="0">作为学生的课程</a>
+                            <a class="J_menuItem" href="student_lesson.html">作为学生的课程</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="teacherLesson.html">作为老师的课程</a>
+                            <a class="J_menuItem" href="teacher_lesson.html">作为老师的课程</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="TALesson.html">作为助教的课程</a>
+                            <a class="J_menuItem" href="ta_lesson.html">作为助教的课程</a>
                         </li>
                     </ul>
                 </li>
@@ -77,10 +76,10 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="studentAnnotation.html" data-index="0">作为学生的批注</a>
+                            <a class="J_menuItem" href="student_annotation.html">作为学生的批注</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="teacherAnnotation.html">作为老师的批注</a>
+                            <a class="J_menuItem" href="teacher_annotation.html">作为老师的批注</a>
                         </li>
                     </ul>
                 </li>
@@ -130,7 +129,7 @@
         </div>
         <div class="row J_mainContent" id="content-main">
             <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="index_v1.html?v=4.0" frameborder="0"
-                    data-id="index_v1.html" seamless></iframe>
+                    data-id="best_annotation.html" seamless></iframe>
         </div>
     </div>
     <!--右侧部分结束-->
@@ -148,6 +147,19 @@
 
 <!-- 第三方插件 -->
 <script src="js/plugins/pace/pace.min.js"></script>
+
+<script type="text/javascript">
+    var userId = window.localStorage.getItem("userId");
+    var name = window.localStorage.getItem("name");
+
+    document.getElementById("name").innerHTML = name;
+
+    function logout(){
+        window.localStorage.removeItem("userId");
+        window.localStorage.removeItem("name");
+        window.location.href = "login.html";
+    }
+</script>
 
 </body>
 

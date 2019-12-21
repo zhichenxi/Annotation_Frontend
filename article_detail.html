@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>FreeAnno课外读物智能批注系统 - 文章详情</title>
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/css/bootstrap-select.min.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+	<div class="wrapper wrapper-content animated fadeInRight">
+		<button type="button" class="btn btn-primary" onclick="goBack();">返回</button>
+	</div>
+	<div class = "wrapper wrapper-content animated fadeInRight" id="articleDiv">
+		<!--
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content p-md">
+						<div class="text-center p-md">
+							<h2>
+								<span class="text-navy">《春》</span>
+							</h2>
+							<p>
+								作者：朱自清
+							</p>
+						</div>
+						<div class="text-left p-md">
+							<p style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;盼望着，盼望着，东风来了，春天的脚步近了。</p>
+							<p style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+							<p style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小草偷偷地从土里钻出来，嫩嫩的，绿绿的。园子里，田野里，瞧去，一大片一大片满是的。坐着，躺着，打两个滚，踢几脚球，赛几趟跑，捉几回迷藏。风轻悄悄的，草软绵绵的。</p>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+		-->
+	</div>
+
+
+	<div class="wrapper wrapper-content animated fadeInRight" id="courseDiv">
+		<!--
+		<div class="row" id="courseDiv">
+			<div class="col-lg-6">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content text-left p-md">
+						<p>课程Id：1234566744566</p>
+					</div>
+					<div class="ibox-content text-center p-md">
+						<h3>课程名称：test</h3>
+						<p>教师姓名：支晨曦</p>
+						<p>助教姓名：luck</p>
+						<div class="text-right">
+							<div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="joinCourse()"><i class="fa fa-plus"></i>&nbsp;加入课程</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content text-left p-md">
+						<p>课程Id：1234566744566</p>
+					</div>
+					<div class="ibox-content text-center p-md">
+						<h3>课程名称：test</h3>
+						<p>教师姓名：支晨曦</p>
+						<p>助教姓名：luck</p>
+						<div class="text-right">
+							<div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="joinCourse()"><i class="fa fa-plus"></i>&nbsp;加入课程</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content text-left p-md">
+						<p>课程Id：1234566744566</p>
+					</div>
+					<div class="ibox-content text-center p-md">
+						<h3>课程名称：test</h3>
+						<p>教师姓名：支晨曦</p>
+						<p>助教姓名：luck</p>
+						<div class="text-right">
+							<div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="joinCourse()"><i class="fa fa-plus"></i>&nbsp;加入课程</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		-->
+	</div>
+
+	<!--模态框-->
+	<div class="modal fade" id="addCourseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title">
+						创建课程
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div style="height:100px;overflow:auto;">
+					    <div class="form-group">
+					    	<label class="col-sm-3" >课程名称：</label>
+					    	<div class="col-sm-9">
+					        	<input type="text" class="form-control" placeholder="请输入课程名" required="">
+					    	</div>
+					    </div>
+					    <div class="form-group">
+					        <label class="col-sm-3 control-label">课程助教：</label>
+					        <div class="col-sm-9">
+					            <select class="selectpicker show-tick form-control" data-live-search="true">
+					            	<option disabled selected value></option>
+								    <option>四川(sichuan)</option>
+								    <option>江西(jiangxi)</option>
+								    <option>湖北(hubei)</option>
+								    <option>上海(shanghai)</option>
+								    <option>北京(beijing)</option>
+								    <option>河北(hebei)</option>
+								</select>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="button" class="btn btn-primary" onclick="submitModal();">
+						提交更改
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/plugins/layer/layer.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/bootstrap-select.min.js"></script>
+
+<!-- 自定义js -->
+<script type="text/javascript" src="js/contabs.js"></script>
+
+<!-- 第三方插件 -->
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<script>
+	function getUrlParam(name) {
+	    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	    if (r != null) return decodeURI(r[2]); return null; //返回参数值
+	}
+
+	var articleId = getUrlParam("articleId");
+
+	var article;
+	$.ajax({
+		url: "http://localhost:8080/article/" + articleId,
+		type:"GET",
+		async: false,
+		success: function(data){
+			if (data['id'] ==  -1){
+				alert("此文章不存在");
+				window.location.href = "article_list.html";
+			}
+			else{
+				article = data;
+			}
+		}
+	})
+	
+	var articleTemplate = '<div class="row"><div class="col-lg-12"><div class="ibox float-e-margins">'
+		+ '<div class="ibox-content p-md"><div class="text-center p-md"><h2><span class="text-navy">《${articleTitle}》</span></h2>'
+		+ '<p>作者：${articleAuthor}</p></div>';
+	var addCourseBtnTemplate = '<div class="ibox-content text-right p-md"><button type="button" class="btn btn-primary" onclick="addCourse()">我要开课</button></div>'
+	var articleHTML = articleTemplate.replace('${articleTitle}', article['title']).replace('${articleAuthor}', article['author']);
+
+	var paraList = article['content'].split('/p');
+	var paraTemplate = '<p style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${paraContent}</p>'
+	var paraHTML = '<div class="text-left p-md">';
+	for (var i = 0; i < paraList.length; i++){
+		paraHTML += paraTemplate.replace("${paraContent}", paraList[i]);
+	}
+	paraHTML += addCourseBtnTemplate;
+	paraHTML += '</div></div></div></div></div>'
+	document.getElementById("articleDiv").innerHTML = articleHTML + paraHTML;
+
+
+	var detailCourseTemplate = '<div class="col-lg-6"><div class="ibox float-e-margins"><div class="ibox-content text-left p-md">'
+		+ '<p>课程Id：${courseId}</p></div><div class="ibox-content text-center p-md">'
+		+ '<h3>课程名称：${courseName}</h3><p>教师姓名：${teacherName}</p><p>助教姓名：${taStudentName}</p>'
+		+ '<div class="text-right"><div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="joinCourse(${courseId})">'
+		+ '<i class="fa fa-plus"></i>&nbsp;加入课程</button></div></div></div></div></div>';
+	var detailCourseList;
+	$.ajax({
+		url:"http://localhost:8080/course/getDetailCoursesByArticle?articleId="+articleId,
+		type:"GET",
+		async:false,
+		success:function(data){
+			detailCourseList = data;
+		}
+	})
+	if (detailCourseList.length != 0){
+		var courseDetailHTML = '<div class="row" id="courseDiv">'
+		for (var i = 0; i < detailCourseList.length; i++){
+			courseDetailHTML += detailCourseTemplate.replace('${courseId}', detailCourseList[i]['id']).replace('${courseName}',detailCourseList[i]['name']).replace('${teacherName}', detailCourseList[i]['teacherName']).replace('${taStudentName}', detailCourseList[i]['taStudentName']).replace('${courseId}', detailCourseList[i]['id']);
+		}
+		courseDetailHTML += '</div>';
+	}
+	document.getElementById('courseDiv').innerHTML = courseDetailHTML;
+
+	
+
+	function goBack(){
+		window.location.href="article_list.html";
+	}
+
+	function addCourse(){
+		console.log("fere");
+		$("#addCourseModal").modal('show');
+	}
+
+	function joinCourse(courseId){
+		var userId = window.localStorage.getItem('userId');
+		if (userId == null){
+			alert("请登录");
+			return;
+		}
+		$.ajax({
+			url: "http://localhost:8080/course/applyCourse?userId="+userId+"&courseId="+courseId,
+			type: "POST",
+			async: false,
+			success: function(data){
+				if (data == -1){
+					alert("您已经申请加入此课程，请等待助教通过，不要重复申请");
+					return;
+				}
+				else {
+					console.log(data);
+					alert("加入成功！请等待助教通过加入请求，不要重复申请");
+					return;
+				}
+			}
+		})
+	}
+
+//TODO: 动态获取用户列表（去掉本人）
+//TODO: 开课功能 上传
+
+</script>
+</body>
+</html>

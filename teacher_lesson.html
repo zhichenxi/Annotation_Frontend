@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>FreeAnno课外读物智能批注系统 - 我的课程</title>
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:auto">
+	<div class="wrapper wrapper-content animated fadeInRight">
+		
+		<div class="row" id="annnotatedCourseDiv">
+<!--
+			<div class="col-lg-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content text-center p-md">
+						<h2>
+							<span class="text-navy">您已经添加批注的课程</span>
+						</h2>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-6">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content text-left p-md">
+						<p>课程Id：1234566744566</p>
+					</div>
+					<div class="ibox-content text-center p-md">
+						<h2>课程名称：<span class="text-navy">《春》课程</span></h2>
+						<p>《春》 朱自清</p>
+						<p>助教：费时的</p>
+						<div class="text-right">
+							<div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="courseDetail(1234566744566)"><i class="fa fa-search"></i>&nbsp;查看课程详情</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content text-left p-md">
+						<p>课程Id：1234566744566</p>
+					</div>
+					<div class="ibox-content text-center p-md">
+						<h2>课程名称：<span class="text-navy">《春》课程</span></h2>
+						<p>《春》 朱自清</p>
+						<p>助教：费时的</p>
+						<div class="text-right">
+							<div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="courseDetail(1234566744566)"><i class="fa fa-search"></i>&nbsp;查看课程详情</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		-->
+		</div>
+
+		<div class="row" id="notAnnnotatedCourseDiv">
+			<!--
+			<div class="col-lg-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content text-center p-md">
+						<h2>
+							<span class="text-navy">您暂未添加批注的课程</span>
+						</h2>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-6">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content text-left p-md">
+						<p>课程Id：1234566744566</p>
+					</div>
+					<div class="ibox-content text-center p-md">
+						<h2>课程名称：<span class="text-navy">《春》课程</span></h2>
+						<p>《春》 朱自清</p>
+						<p>助教：费时的</p>
+						<div class="text-right">
+							<div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="courseDetail(1234566744566)"><i class="fa fa-search"></i>&nbsp;查看课程详情</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content text-left p-md">
+						<p>课程Id：1234566744566</p>
+					</div>
+					<div class="ibox-content text-center p-md">
+						<h2>课程名称：<span class="text-navy">《春》课程</span></h2>
+						<p>《春》 朱自清</p>
+						<p>助教：费时的</p>
+						<div class="text-right">
+							<div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="courseDetail(1234566744566)"><i class="fa fa-search"></i>&nbsp;查看课程详情</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content text-left p-md">
+						<p>课程Id：1234566744566</p>
+					</div>
+					<div class="ibox-content text-center p-md">
+						<h2>课程名称：<span class="text-navy">《春》课程</span></h2>
+						<p>《春》 朱自清</p>
+						<p>助教：费时的</p>
+						<div class="text-right">
+							<div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="courseDetail(1234566744566)"><i class="fa fa-search"></i>&nbsp;查看课程详情</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		-->
+		</div>
+	
+	</div>
+
+
+	<!-- 全局js -->
+	<script src="js/jquery.min.js?v=2.1.4"></script>
+	<script src="js/bootstrap.min.js?v=3.3.6"></script>
+	<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="js/plugins/layer/layer.min.js"></script>
+
+	<!-- 自定义js -->
+	<script type="text/javascript" src="js/contabs.js"></script>
+
+	<!-- 第三方插件 -->
+	<script src="js/plugins/pace/pace.min.js"></script>
+
+	<script type="text/javascript">
+		var courseTemplate = '<div class="col-lg-6"><div class="ibox float-e-margins"><div class="ibox-content text-left p-md">'
+			+ '<p>课程Id：${courseId}</p></div><div class="ibox-content text-center p-md"><h2>课程名称：<span class="text-navy">${courseName}'
+			+ '</span></h2><p>《${articleTitle}》 ${articleAuthor}</p><p>助教：${taStudentName}</p>'
+			+ '<div class="text-right"><div style="margin: 10px;"><button type="button" class="btn btn-primary" onclick="courseDetail(${courseId})">'
+			+ '<i class="fa fa-search"></i>&nbsp;查看课程详情</button></div></div></div></div></div>';
+		var noCourseTemplate = '<div class="col-lg-12"><div class="ibox float-e-margins"><div class="ibox-content text-center p-md"><h2><span class="text-navy">您暂时没有作为老师的课程</span></h2></div></div></div>';
+		var annotatedCourseHeaderTemplate = '<div class="col-lg-12"><div class="ibox float-e-margins"><div class="ibox-content text-center p-md"><h2><span class="text-navy">您已经添加批注的课程</span></h2></div></div></div>';
+		var noAnnotatedCourseHeaderTemplate = '<div class="col-lg-12"><div class="ibox float-e-margins"><div class="ibox-content text-center p-md"><h2><span class="text-navy">您暂未添加批注的课程</span></h2></div></div></div>';
+
+		var userId = window.localStorage.getItem("userId");
+		var teacherCourseRes;
+		$.ajax({
+			url: "http://localhost:8080/course/getCoursesByTeacher?userId=" + userId,
+			type:"GET",
+			async: false,
+			success: function(data){
+				console.log(data);
+				teacherCourseRes = data;
+				return;
+			}
+		})
+
+		function drawThePage(courseDetail){
+			var annotatedCourses = courseDetail['annotatedCourses'];
+			var notAnnotatedCourses = courseDetail['notAnnotatedCourses'];
+			if (annotatedCourses.length == 0 && notAnnotatedCourses.length == 0){
+				document.getElementById("annnotatedCourseDiv").innerHTML = noCourseTemplate;
+				return;
+			}
+			if (annotatedCourses.length != 0){
+				var annotatedCourseDivHTML = annotatedCourseHeaderTemplate;
+				for (var i = 0; i < annotatedCourses.length; i++){
+					var tmpCourseDetail = annotatedCourses[i];
+					annotatedCourseDivHTML += courseTemplate.replace("${courseId}", tmpCourseDetail["id"]).replace("${courseName}", tmpCourseDetail["name"]).replace("${articleTitle}", tmpCourseDetail["articleTitle"]).replace("${articleAuthor}", tmpCourseDetail["articleAuthor"]).replace("${taStudentName}", tmpCourseDetail["taStudentName"]).replace("${courseId}", tmpCourseDetail["id"]);
+				}
+				document.getElementById("annnotatedCourseDiv").innerHTML = annotatedCourseDivHTML;
+			}
+			if (notAnnotatedCourses.length != 0){
+				var noAnnotatedCourseDivHTML = noAnnotatedCourseHeaderTemplate;
+				for (var i = 0; i < notAnnotatedCourses.length; i++){
+					var tmpCourseDetail = notAnnotatedCourses[i];
+					noAnnotatedCourseDivHTML += courseTemplate.replace("${courseId}", tmpCourseDetail["id"]).replace("${courseName}", tmpCourseDetail["name"]).replace("${articleTitle}", tmpCourseDetail["articleTitle"]).replace("${articleAuthor}", tmpCourseDetail["articleAuthor"]).replace("${taStudentName}", tmpCourseDetail["taStudentName"]).replace("${courseId}", tmpCourseDetail["id"]);
+				}
+				document.getElementById("notAnnnotatedCourseDiv").innerHTML = noAnnotatedCourseDivHTML
+			}
+			return;
+		}
+
+		drawThePage(teacherCourseRes);
+
+		function courseDetail(courseId){
+			//TODO
+			console.log(courseId);
+		}
+	</script>
+</body>
+</html>

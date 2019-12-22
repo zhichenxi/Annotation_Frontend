@@ -20,6 +20,7 @@
 </head>
 
 <body class="gray-bg">
+
 	<div class="wrapper wrapper-content animated fadeInRight">
 		<button type="button" class="btn btn-primary" onclick="goBack();">返回</button>
 	</div>
@@ -115,24 +116,18 @@
 					</h4>
 				</div>
 				<div class="modal-body">
-					<div style="height:100px;overflow:auto;">
+					<div style="height:300px;overflow:auto;">
 					    <div class="form-group">
 					    	<label class="col-sm-3" >课程名称：</label>
 					    	<div class="col-sm-9">
-					        	<input type="text" class="form-control" placeholder="请输入课程名" required="">
+					        	<input type="text" class="form-control" placeholder="请输入课程名" required="" id="addCourseName">
 					    	</div>
 					    </div>
 					    <div class="form-group">
 					        <label class="col-sm-3 control-label">课程助教：</label>
 					        <div class="col-sm-9">
-					            <select class="selectpicker show-tick form-control" data-live-search="true">
-					            	<option disabled selected value></option>
-								    <option>四川(sichuan)</option>
-								    <option>江西(jiangxi)</option>
-								    <option>湖北(hubei)</option>
-								    <option>上海(shanghai)</option>
-								    <option>北京(beijing)</option>
-								    <option>河北(hebei)</option>
+					            <select class="selectpicker show-tick form-control" data-live-search="true" id="userOptions">
+					            	<!--<option disabled selected value></option>-->
 								</select>
 					        </div>
 					    </div>
@@ -165,6 +160,31 @@
 <script src="js/plugins/pace/pace.min.js"></script>
 
 <script>
+	function getAllUsers(){
+		var allUsers = new Array();
+		var userId = window.localStorage.getItem("userId");
+		$.ajax({
+			url: "http://localhost:8080/user/getAllUsers",
+			type: "GET",
+			async: false,
+			success: function(data){
+				for (var i = 0; i < data.length; i++){
+					if (data[i]["id"] != userId){
+						allUsers.push(data[i]);
+					}
+				}
+			}
+		})
+		var userOptionTemplate = "<option value=${userId}>${userId} ${userName}</option>";
+		var userOptionHTML = "";
+		for (var i = 0; i < allUsers.length; i++){
+			userOptionHTML += userOptionTemplate.replace("${userId}", allUsers[i]["id"]).replace("${userName}", allUsers[i]["name"]).replace("${userId}", allUsers[i]["id"]);
+		}
+		document.getElementById("userOptions").innerHTML += userOptionHTML;
+	}
+
+	getAllUsers();
+
 	function getUrlParam(name) {
 	    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
 	    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
@@ -236,7 +256,6 @@
 	}
 
 	function addCourse(){
-		console.log("fere");
 		$("#addCourseModal").modal('show');
 	}
 
@@ -259,6 +278,35 @@
 					console.log(data);
 					alert("加入成功！请等待助教通过加入请求，不要重复申请");
 					return;
+				}
+			}
+		})
+	}
+
+	function submitModal(){
+		var courseName = document.getElementById("addCourseName").value;
+		var taStudentId = $("#userOptions option:selected").val();
+		var userId = window.localStorage.getItem('userId');
+		var data = {
+			articleid: articleId,
+			tastudentid: taStudentId,
+			teacherid: userId,
+			name: courseName
+		}
+		$.ajax({
+			url: "http://localhost:8080/course/addCourse",
+			type: "POST",
+			data: JSON.stringify(data),
+			contentType:"application/json",
+			async: false,
+			success: function(data){
+				if (data["id"] == -1){
+					alert("开课失败，请检查您的网络连接");
+					return;
+				}
+				else{
+					alert("开课成功，请及时上传您的注释");
+					location.reload();
 				}
 			}
 		})
